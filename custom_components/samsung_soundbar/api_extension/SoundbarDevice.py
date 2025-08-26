@@ -4,7 +4,7 @@ import json
 import logging
 from urllib.parse import quote
 
-from pysmartthings import DeviceEntity
+from ..pysmartthings_0_7_8.device import DeviceEntity
 
 from .const import SpeakerIdentifier, RearSpeakerMode
 from ..const import DOMAIN

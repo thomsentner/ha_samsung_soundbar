@@ -3,7 +3,7 @@ import logging
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import DOMAIN, HomeAssistant
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from pysmartthings import SmartThings
+from .pysmartthings_0_7_8 import SmartThings
 
 from .api_extension.SoundbarDevice import SoundbarDevice
 from .const import (

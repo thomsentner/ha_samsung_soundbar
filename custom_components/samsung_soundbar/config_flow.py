@@ -1,11 +1,11 @@
 import logging
 from typing import Any
 
-import pysmartthings
 import voluptuous as vol
 from homeassistant import config_entries
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from pysmartthings import APIResponseError
+from .pysmartthings_0_7_8 import APIResponseError
+from .pysmartthings_0_7_8 import SmartThings
 from voluptuous import All, Range
 
 from .const import (
@@ -57,7 +57,7 @@ class ExampleConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
             try:
                 session = async_get_clientsession(self.hass)
-                api = pysmartthings.SmartThings(
+                api = SmartThings(
                     session, self.user_input.get(CONF_ENTRY_API_KEY)
                 )
                 device = await validate_input(
